@@ -6,11 +6,15 @@ interface IEntradaSalida{
 }
 
 class GestorEntradaSalida:IEntradaSalida {
+
     override fun mostrar(mensaje: String) {
         println(mensaje)
     }
 
     override fun leerNumero(num: String): Int {
-        if (num.toInt())
+        val numero = num.toIntOrNull()
+        if (numero != null) {
+            return numero
+        }else return 5
     }
 }
