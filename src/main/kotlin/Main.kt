@@ -2,5 +2,6 @@ fun main() {
     val entradaSalida = GestorEntradaSalida()
     val secuencias = GeneradorSecuencias(entradaSalida)
 
-    secuencias.fraseIncremental(4)
+    val menu = Menu(secuencias,entradaSalida)
+    menu.iniciarMenu()
 }
