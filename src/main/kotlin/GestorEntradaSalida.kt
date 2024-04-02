@@ -1,5 +1,5 @@
 interface IEntradaSalida{
-    fun mostrar(mensaje:String)
+    fun <T> mostrar(mensaje: T)
 
     fun leerNumero(num:String):Int
 
@@ -7,14 +7,17 @@ interface IEntradaSalida{
 
 class GestorEntradaSalida:IEntradaSalida {
 
-    override fun mostrar(mensaje: String) {
+
+    override fun <T> mostrar(mensaje: T) {
         println(mensaje)
     }
 
     override fun leerNumero(num: String): Int {
-        val numero = num.toIntOrNull()
-        if (numero != null) {
-            return numero
-        }else return 5
+        var numero = num.toIntOrNull()
+        while (numero == null){
+            mostrar("El numero no es valido, pon otro: ")
+            numero = readln().toIntOrNull()
+        }
+        return numero
     }
 }
