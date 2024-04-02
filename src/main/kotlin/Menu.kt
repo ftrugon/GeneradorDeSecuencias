@@ -10,11 +10,11 @@ class Menu(
         consola.mostrarParaPedir("Que vas a hacer: ")
     }
 
-    fun pedirNumero():Int{
+    private fun pedirNumero():Int{
         return consola.leerNumero(readln())
     }
 
-    fun opcionElegida(numero:Int) = when(numero){
+    private fun opcionElegida(numero:Int) = when(numero){
         1 -> hacerFraseIncremental()
         2 -> hacerFraseFinal()
         else -> {
@@ -22,13 +22,13 @@ class Menu(
         }
     }
 
-    fun hacerFraseIncremental(){
+    private fun hacerFraseIncremental(){
         consola.mostrarParaPedir("De cuantas palabras quieres la frase?: ")
         val numero = pedirNumero()
         secuencias.fraseIncremental(numero)
     }
 
-    fun hacerFraseFinal(){
+    private fun hacerFraseFinal(){
         consola.mostrarParaPedir("De cuantas palabras quieres la frase?: ")
         val numero = pedirNumero()
         secuencias.fraseFinal(numero)
